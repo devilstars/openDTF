@@ -1,12 +1,14 @@
 <template>
     <div class="">
-        s here
+        <sidebar-filter />
     </div>
 </template>
 
 <script>
+    import SidebarFilter from "./SidebarFilter";
     export default {
-        name: "Sidebar"
+        name: "Sidebar",
+        components: {SidebarFilter}
     }
 </script>
 
