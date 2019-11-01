@@ -7,7 +7,7 @@
             <template v-for="(item, index) in data.items">
                 <li :key="'sidesub_' + index">
                     <a href="#" class="flex p-2 text-gray-700 font-semibold hover:bg-gray-200">
-                        <img :src="'https://api.adorable.io/avatars/40/' + item.id + '1@adorable.png'" :alt="item.title" class="h-6 mr-3">
+                        <img :src="'https://api.adorable.io/avatars/40/' + item.id + '.png'" :alt="item.title" class="h-6 mr-3" loading="lazy">
                         {{ item.title }}
                     </a>
                 </li>

@@ -6,7 +6,7 @@
                 <sidebar />
             </div>
             <div class="w-3/5 pl-6 pr-6">
-                2
+                <router-view></router-view>
             </div>
             <div class="w-1/5">
                 3
