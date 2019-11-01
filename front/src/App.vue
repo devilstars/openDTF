@@ -1,8 +1,8 @@
 <template>
-    <div id="app">
+    <div id="app" class="h-full">
         <global-header></global-header>
-        <div class="flex max-w-screen-xl w-full mx-auto px-6">
-            <div class="w-1/5">
+        <div class="flex max-w-screen-xl w-full mx-auto px-6 h-full">
+            <div class="w-1/5 border-r-2 h-full">
                 <sidebar />
             </div>
             <div class="w-3/5 pl-6 pr-6">

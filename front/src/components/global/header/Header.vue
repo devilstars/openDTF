@@ -1,7 +1,7 @@
 <template>
     <nav class="bg-gray-200 py-3 px-6 border-b-2">
         <div class="flex max-w-screen-xl w-full mx-auto px-6">
-            <div class="w-1/5">
+            <div class="w-1/5 pl-2">
                 <div class="flex items-center flex-shrink-0 text-black mr-6 h-full">
                     <a href="/">
                         <span class="font-bold text-xl tracking-tight">dev3l</span>
