@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./scss/global.scss";
+@import "./scss/vars";
+@import "./scss/modules/scrollbar";
+@import "./scss/global";
