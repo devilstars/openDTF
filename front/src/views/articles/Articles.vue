@@ -2,6 +2,10 @@
     <div class="mt-5">
         <sort-tool />
         <article-item />
+        <!-- TODO remove -->
+        <article-item />
+        <article-item />
+        <!-- TODO remove -->
     </div>
 </template>
 
