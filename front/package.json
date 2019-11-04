@@ -7,7 +7,7 @@
         "build": "rimraf ../public/{js,css,img} && vue-cli-service build --no-clean"
     },
     "dependencies": {
-        "core-js": "^3.3.2",
+        "core-js": "^3.3.6",
         "vue": "^2.6.10",
         "vue-router": "^3.1.3",
         "vuex": "^3.0.1"
