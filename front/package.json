@@ -7,6 +7,7 @@
         "build": "rimraf ../public/{js,css,img} && vue-cli-service build --no-clean"
     },
     "dependencies": {
+        "axios": "^0.19.0",
         "core-js": "^3.3.6",
         "vue": "^2.6.10",
         "vue-router": "^3.1.3",
