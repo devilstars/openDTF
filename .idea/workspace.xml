@@ -108,6 +108,8 @@
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Sxbi1Ll76fdFpy3hckehNb1m7I" />
@@ -161,6 +163,7 @@
       <workItem from="1572880627939" duration="518000" />
       <workItem from="1572981096520" duration="79000" />
       <workItem from="1572981206449" duration="3054000" />
+      <workItem from="1573130080199" duration="6686000" />
     </task>
     <servers />
   </component>

@@ -9,7 +9,8 @@
                 Имя Автора
             </a>
             <a href="#" class="inline-flex ml-5 text-sm text-gray-500 hover:text-purple-600" title="17 декабря 2019 15:25">
-                17 декабря 2019 15:25
+                {{ formatDate(data.created_at) }}
+<!--                17 декабря 2019 15:25-->
             </a>
             <a href="#" class="ml-auto">
                 <svg class="h-6 w-6 text-purple-300 hover:text-purple-700 fill-current" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" xml:space="preserve">
@@ -32,18 +33,18 @@
         <div class="px-3 py-2 pt-0">
             <h3 class="text-2xl font-semibold">
                 <a href="#">
-                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+                    {{ data.title }}
                 </a>
             </h3>
         </div>
         <div class="mt-4">
             <a href="#">
-                <img src="https://picsum.photos/800/400/?blur" alt="">
+                <img :src="data.teaser" alt="">
             </a>
         </div>
         <div class="mt-2 px-3 py-2">
             <p>
-                Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
+                {{ data.body }}
             </p>
         </div>
         <div class="mt-2 px-3 py-2 flex">
@@ -126,8 +127,20 @@
 </template>
 
 <script>
+    import dayjs from 'dayjs'
+    import advancedFormat from 'dayjs/plugin/advancedFormat'
+    import 'dayjs/locale/ru'
+
     export default {
-        name: "ArticleItem"
+        name: "ArticleItem",
+        props: [
+            'data'
+        ],
+        methods: {
+            formatDate(date) {
+                return dayjs(date).locale('ru').format('DD MMMM YYYY HH:mm')
+            }
+        },
     }
 </script>
 
