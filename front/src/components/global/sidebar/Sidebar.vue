@@ -1,8 +1,10 @@
 <template>
-    <div class="min-h-screen-sidebar flex flex-col sticky top-header">
-        <sidebar-filter />
-        <sidebar-subs />
-        <sidebar-footer />
+    <div class="h-screen-sidebar flex flex-col sticky top-header">
+        <div class="scroll-thin overflow-y-auto">
+            <sidebar-filter />
+            <sidebar-subs />
+            <sidebar-footer />
+        </div>
     </div>
 </template>
 

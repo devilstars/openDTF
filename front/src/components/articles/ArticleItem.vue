@@ -10,7 +10,6 @@
             </a>
             <a href="#" class="inline-flex ml-5 text-sm text-gray-500 hover:text-purple-600" title="17 декабря 2019 15:25">
                 {{ formatDate(data.created_at) }}
-<!--                17 декабря 2019 15:25-->
             </a>
             <a href="#" class="ml-auto">
                 <svg class="h-6 w-6 text-purple-300 hover:text-purple-700 fill-current" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" xml:space="preserve">
@@ -128,7 +127,6 @@
 
 <script>
     import dayjs from 'dayjs'
-    import advancedFormat from 'dayjs/plugin/advancedFormat'
     import 'dayjs/locale/ru'
 
     export default {

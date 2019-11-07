@@ -7,6 +7,6 @@
 .top-header {
     top: $header-height;
 }
-.min-h-screen-sidebar {
-    min-height: calc(100vh - #{$header-height});
+.h-screen-sidebar {
+    height: calc(100vh - #{$header-height});
 }
