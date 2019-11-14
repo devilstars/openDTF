@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white border mb-5">
-        <div class="flex px-3 py-2">
+        <div class="flex items-center px-3 py-2">
             <a href="#" class="inline-flex text-gray-700 font-semibold hover:text-purple-600">
                 <img src="https://api.adorable.io/avatars/40/1.png" alt="Название #1" class="h-6 mr-2" loading="lazy">
                 Название #1
@@ -92,7 +92,7 @@
                 33
             </a>
             <div class="inline-flex align-middle ml-auto">
-                <a href="#" class="flex items-center text-gray-500 hover:text-purple-600">
+                <a href="#" class="flex items-center text-gray-500 hover:text-red-600">
                     <svg class="w-4 h-4 fill-current" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          width="284.929px" height="284.929px" viewBox="0 0 284.929 284.929"
                          xml:space="preserve">
@@ -107,7 +107,7 @@
                 <span class="mx-3 font-semibold text-gray-500">
                     99
                 </span>
-                <a href="#" class="flex items-center text-gray-500 hover:text-purple-600">
+                <a href="#" class="flex items-center text-gray-500 hover:text-green-600">
                     <svg class="w-4 h-4 fill-current" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          width="284.929px" height="284.929px" viewBox="0 0 284.929 284.929"
                          xml:space="preserve">
