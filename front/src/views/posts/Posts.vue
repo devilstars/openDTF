@@ -1,12 +1,12 @@
 <template>
     <div class="mt-5">
         <sort-tool/>
-        <template v-for="(item, index) in pd.data">
+        <template v-for="(item, index) in getPosts.data">
             <post-item :key="'post_' + index + '_' + item.id"
                           :data="item" />
         </template>
-        <template v-if="!loading">
-            <infinite-loading @distance="1" @infinite="infiniteHandler">
+        <template v-if="!getLoading">
+            <infinite-loading @distance="1" @infinite="infiniteLoader">
                 <div slot="no-more" class="my-5">
                     <span class="my-5 text-gray-500">
                         Больше нет записей :)
@@ -26,56 +26,20 @@
     import SortTool from "../../components/posts/SortTool";
     import PostItem from "../../components/posts/PostItem";
     import InfiniteLoading from 'vue-infinite-loading';
+    import { mapGetters, mapActions } from "vuex";
 
     export default {
         name: "Posts",
         components: {PostItem, SortTool, InfiniteLoading},
         data() {
-            return {
-                pd: {},
-                page: 2,
-                loading: true,
-            }
+            return {}
         },
         created() {
-            this._doRequest();
+            this.fetchPosts();
         },
+        computed: {...mapGetters(["getPosts", "getLoading"])},
         methods: {
-            _doRequest() {
-                this.loading = true;
-                axios.get(this.$appConf.postsUrl.list, {
-                    params: {
-                        page: 1
-                    }
-                })
-                    .then(response => {
-                        this.pd = response.data;
-                        this.loading = false;
-                    }).catch(error => {
-                    this.loading = false;
-                    // this.showError(error);
-                    console.log(error);
-                });
-            },
-            infiniteHandler($state) {
-                axios.get(this.$appConf.articleUrl.list, {
-                    params: {
-                        page: this.page
-                    }
-                })
-                    .then(response => {
-                        if (response.data.meta.last_page >= this.page) {
-                            this.page += 1;
-                            this.pd.data.push(...response.data.data);
-                            $state.loaded();
-                        } else {
-                            $state.complete();
-                        }
-                    }).catch(error => {
-                    $state.complete();
-                    console.log(error);
-                });
-            },
+            ...mapActions(['fetchPosts', 'infiniteLoader']),
         }
     }
 </script>
