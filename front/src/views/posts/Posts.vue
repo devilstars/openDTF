@@ -2,7 +2,7 @@
     <div class="mt-5">
         <sort-tool/>
         <template v-for="(item, index) in pd.data">
-            <article-item :key="'post_' + index + '_' + item.id"
+            <post-item :key="'post_' + index + '_' + item.id"
                           :data="item" />
         </template>
         <template v-if="!loading">
@@ -23,13 +23,13 @@
 </template>
 
 <script>
-    import SortTool from "../../components/articles/SortTool";
-    import ArticleItem from "../../components/articles/ArticleItem";
+    import SortTool from "../../components/posts/SortTool";
+    import PostItem from "../../components/posts/PostItem";
     import InfiniteLoading from 'vue-infinite-loading';
 
     export default {
-        name: "Articles",
-        components: {ArticleItem, SortTool, InfiniteLoading},
+        name: "Posts",
+        components: {PostItem, SortTool, InfiniteLoading},
         data() {
             return {
                 pd: {},
@@ -43,7 +43,7 @@
         methods: {
             _doRequest() {
                 this.loading = true;
-                axios.get(this.$appConf.articleUrl.list, {
+                axios.get(this.$appConf.postsUrl.list, {
                     params: {
                         page: 1
                     }

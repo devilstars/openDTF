@@ -4,7 +4,7 @@ export default {
     limitItemsPerPage: 10,
     apiUrl: apiUrl,
 
-    articleUrl: {
-        list: 'articles'
+    postsUrl: {
+        list: 'posts'
     }
 }

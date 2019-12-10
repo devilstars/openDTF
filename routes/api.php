@@ -6,4 +6,4 @@
 //    return $request->user();
 //});
 
-Route::get('articles', 'Api\ArticleController@getArticles')->name('api.articles');
+Route::get('posts', 'Api\PostController@getPosts')->name('api.posts');

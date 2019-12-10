@@ -130,7 +130,7 @@
     import 'dayjs/locale/ru'
 
     export default {
-        name: "ArticleItem",
+        name: "PostItem",
         props: [
             'data'
         ],
