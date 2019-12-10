@@ -8,9 +8,9 @@
             <a href="#" class="inline-flex ml-5 text-sm text-gray-700 hover:text-purple-600">
                 Имя Автора
             </a>
-            <a href="#" class="inline-flex ml-5 text-sm text-gray-500 hover:text-purple-600" title="17 декабря 2019 15:25">
+            <router-link :to="{ name: 'post' }" class="inline-flex ml-5 text-sm text-gray-500 hover:text-purple-600" title="17 декабря 2019 15:25">
                 {{ formatDate(data.created_at) }}
-            </a>
+            </router-link>
             <a href="#" class="ml-auto">
                 <svg class="h-6 w-6 text-purple-300 hover:text-purple-700 fill-current" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" xml:space="preserve">
                     <g>
@@ -31,15 +31,15 @@
         </div>
         <div class="px-3 py-2 pt-0">
             <h3 class="text-2xl font-semibold">
-                <a href="#">
+                <router-link :to="{ name: 'post' }">
                     {{ data.title }}
-                </a>
+                </router-link>
             </h3>
         </div>
         <div class="mt-4">
-            <a href="#">
+            <router-link :to="{ name: 'post' }">
                 <img :src="data.teaser" alt="">
-            </a>
+            </router-link>
         </div>
         <div class="mt-2 px-3 py-2">
             <p>

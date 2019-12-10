@@ -11,7 +11,7 @@ export default {
          */
         async fetchPosts({ commit, getters, dispatch }) {
             let posts = {};
-            
+
             await axios.get(config.postsUrl.list, {
                 params: {
                     page: 1

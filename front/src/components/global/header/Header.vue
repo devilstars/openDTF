@@ -3,9 +3,9 @@
         <div class="flex max-w-screen-xl w-full mx-auto px-6">
             <div class="w-1/5 pl-2">
                 <div class="flex items-center flex-shrink-0 text-black mr-6 h-full">
-                    <a href="/">
+                    <router-link :to="{ name: 'home' }">
                         <span class="font-bold text-xl tracking-tight">dev3l</span>
-                    </a>
+                    </router-link>
                 </div>
             </div>
             <div class="w-3/5 pl-6 pr-6">
