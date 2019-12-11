@@ -35,8 +35,7 @@
         components: {PostCommentLevel},
         data() {
             return {
-                data: [],
-                data2: [
+                data: [
                     {
                         id: 1,
                         author: 'Ник Автора 1',
