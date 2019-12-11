@@ -18,7 +18,12 @@
         </div>
 
         <div class="flex items-center px-3 py-2">
-            <post-comment-level :level="data" />
+            <template v-if="!data.length">
+                <div class="text-sm font-semibold text-gray-600">Нет комментариев к этой записи</div>
+            </template>
+            <template v-else>
+                <post-comment-level :level="data" />
+            </template>
         </div>
     </div>
 </template>
@@ -30,7 +35,8 @@
         components: {PostCommentLevel},
         data() {
             return {
-                data: [
+                data: [],
+                data2: [
                     {
                         id: 1,
                         author: 'Ник Автора 1',
@@ -52,8 +58,24 @@
                                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
                                         depth: 2,
                                         children: []
+                                    },
+                                    {
+                                        id: 4,
+                                        author: 'Ник Автора 3',
+                                        date: '2019-12-10 07:56:40',
+                                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+                                        depth: 2,
+                                        children: []
                                     }
                                 ]
+                            },
+                            {
+                                id: 3,
+                                author: 'Ник Автора 2',
+                                date: '2019-12-10 07:56:40',
+                                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+                                depth: 1,
+                                children: []
                             }
                         ],
                     },
