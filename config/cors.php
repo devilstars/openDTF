@@ -13,7 +13,7 @@ return [
     */
 
     'supportsCredentials' => false,
-    'allowedOrigins' => [env('APP_URL'), 'http://localhost:8080'],
+    'allowedOrigins' => [env('APP_URL'), 'http://localhost:3000'],
     'allowedOriginsPatterns' => [],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
