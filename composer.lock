@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5eea616b8625f0b1e8e4b85cf603657",
+    "content-hash": "b1cfc041d5dc61ac1cee66e23645cf81",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -650,6 +650,66 @@
                 "laravel"
             ],
             "time": "2020-04-15T20:57:47+00:00"
+        },
+        {
+            "name": "laravel/sanctum",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "3615d39ecd7c609660413e80f5d051f6f0fccf3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/3615d39ecd7c609660413e80f5d051f6f0fccf3d",
+                "reference": "3615d39ecd7c609660413e80f5d051f6f0fccf3d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/contracts": "^6.9|^7.0",
+                "illuminate/database": "^6.9|^7.0",
+                "illuminate/support": "^6.9|^7.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^4.0|^5.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sanctum\\SanctumServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Sanctum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
+            "keywords": [
+                "auth",
+                "laravel",
+                "sanctum"
+            ],
+            "time": "2020-04-14T15:29:04+00:00"
         },
         {
             "name": "laravel/tinker",

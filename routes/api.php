@@ -7,3 +7,5 @@
 //});
 
 Route::get('posts', 'Api\PostController@getPosts')->name('api.posts');
+
+Route::post('auth/login', 'Api\UserController@auth')->name('user.auth.login');
