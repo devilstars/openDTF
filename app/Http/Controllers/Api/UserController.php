@@ -39,8 +39,17 @@ class UserController extends Controller
 
         /**
          * если всё ок - создать токен
+         * TODO назначить настоящие разрешения
+         * TODO разрешения согласно ролям
          */
-        $token = $user->createToken('token-name');
-        return $token->plainTextToken;
+        $token = $user->createToken('user', [
+            'test:show'
+        ]);
+        return [
+            'token' => $token->plainTextToken,
+            'email' => $user->email,
+            'name' => $user->name,
+            'abilities' => $token->accessToken->abilities
+        ];
     }
 }
