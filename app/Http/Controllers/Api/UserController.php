@@ -52,4 +52,8 @@ class UserController extends Controller
             'abilities' => $token->accessToken->abilities
         ];
     }
+
+    public function logout(Request $request) {
+        return response('BAD', 500);
+    }
 }
