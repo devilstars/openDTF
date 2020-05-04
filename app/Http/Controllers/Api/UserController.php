@@ -54,6 +54,8 @@ class UserController extends Controller
     }
 
     public function logout(Request $request) {
-        return response('BAD', 500);
+        $user = $request->user();
+        $user->tokens()->delete();
+        return true;
     }
 }
