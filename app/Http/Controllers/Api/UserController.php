@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserAuthRequest;
+use App\Http\Requests\UserRegisterRequest;
 use App\Http\Services\UserService;
 use App\User;
-use Hash;
-use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -27,7 +26,8 @@ class UserController extends Controller
      * @param UserAuthRequest $request
      * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
-    public function auth(UserAuthRequest $request) {
+    public function auth(UserAuthRequest $request)
+    {
         /**
          * проверка на существование пользователя в базе
          */
@@ -77,9 +77,42 @@ class UserController extends Controller
      * @param Request $request
      * @return bool
      */
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         $user = $request->user();
         $user->tokens()->delete();
         return true;
+    }
+
+    public function register(UserRegisterRequest $request)
+    {
+        try {
+            $user = $this->userService->createUser($request);
+        } catch (\Exception | \Throwable $e) {
+            $response = [
+                'status' => 404,
+                'message' => 'Произошла ошибка. Попробуйте зарегистрироваться позднее.'
+            ];
+            return response($response, 404);
+        }
+
+        /**
+         * если всё ок - создать токен
+         * TODO назначить настоящие разрешения
+         * TODO разрешения согласно ролям
+         */
+        $token = $user->createToken('user', [
+            'test:show'
+        ]);
+
+        /**
+         * Отправить токен в ответ
+         */
+        return [
+            'token' => $token->plainTextToken,
+            'email' => $user->email,
+            'name' => $user->name,
+            'abilities' => $token->accessToken->abilities
+        ];
     }
 }
