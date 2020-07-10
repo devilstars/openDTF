@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
 
             $table->string('title')->index();
+            $table->string('slug')->index();
             $table->mediumText('text')->nullable();
 
             $table->string('seo_title')->nullable();
