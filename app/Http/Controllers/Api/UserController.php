@@ -53,6 +53,14 @@ class UserController extends Controller
             return response($response, 404);
         };
 
+        if (!$user->is_active) {
+            $response = [
+                'status' => 403,
+                'message' => 'Пользователь не активирован'
+            ];
+            return response($response, 403);
+        }
+
         /**
          * если всё ок - создать токен
          * TODO назначить настоящие разрешения
