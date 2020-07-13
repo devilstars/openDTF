@@ -20,5 +20,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 Route::middleware(['auth:sanctum', 'user.is_active'])->group(function () {
-
+    Route::post('dashboard/users', 'Api\AdminUserController@logout')->name('dashboard.users');
 });

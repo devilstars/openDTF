@@ -24,6 +24,7 @@ class AbilitiesService
     {
         return [
             /* Юзеры */
+            'user:list' => 'Просмотр списка пользователей',
             'user:edit_profile' => 'Редактирование пользователей',
             'user:delete' => 'Удаление пользователей',
             'user:edit_roles' => 'Роли пользователя',

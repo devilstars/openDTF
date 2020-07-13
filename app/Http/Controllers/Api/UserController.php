@@ -63,12 +63,8 @@ class UserController extends Controller
 
         /**
          * если всё ок - создать токен
-         * TODO назначить настоящие разрешения
-         * TODO разрешения согласно ролям
          */
-        $token = $user->createToken('user', [
-            'test:show'
-        ]);
+        $token = $user->createToken('user', $user->abilities ? json_decode($user->abilities) : []);
 
         /**
          * Отправить токен в ответ
