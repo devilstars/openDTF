@@ -15,7 +15,7 @@ return [
     /*
      * Matches the request origin. `[*]` allows all origins.
      */
-    'allowed_origins' => [env('APP_URL'), 'http://localhost:3000', 'http://opendtf.test:3000'],
+    'allowed_origins' => [env('APP_URL'), 'http://localhost:3000'],
 
     /*
      * Matches the request origin with, similar to `Request::is()`
