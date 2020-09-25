@@ -7,6 +7,7 @@ use App\Http\Requests\User\UserAuthRequest;
 use App\Http\Requests\UserRegisterRequest;
 use App\Http\Services\UserService;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
