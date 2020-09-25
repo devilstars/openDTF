@@ -24,16 +24,29 @@ class UserController extends Controller
 
     /**
      * @param UserAuthRequest $request
-     * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @return bool|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      */
     public function auth(UserAuthRequest $request)
     {
         /**
          * проверка на существование пользователя в базе
          */
-        try {
-            $user = $this->userService->getUserByEmail($request);
-        } catch (\Exception | \Throwable $e) {
+//        try {
+//            $user = $this->userService->getUserByEmail($request);
+//        } catch (\Exception | \Throwable $e) {
+//            $response = [
+//                'status' => 404,
+//                'message' => 'Пользователь не найден'
+//            ];
+//            return response($response, 404);
+//        }
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            $user = auth()->user();
+        } else {
             $response = [
                 'status' => 404,
                 'message' => 'Пользователь с такой электронной почтой или паролем не найден'
@@ -45,13 +58,13 @@ class UserController extends Controller
          * если пользователь найден по его email - проверить пароль
          */
         /** @var User $user */
-        if (!$this->userService->checkUserPasswordHash($request, $user)) {
-            $response = [
-                'status' => 404,
-                'message' => 'Пользователь с такой электронной почтой или паролем не найден'
-            ];
-            return response($response, 404);
-        };
+//        if (!$this->userService->checkUserPasswordHash($request, $user)) {
+//            $response = [
+//                'status' => 404,
+//                'message' => 'Пользователь с такой электронной почтой или паролем не найден'
+//            ];
+//            return response($response, 404);
+//        };
 
         if (!$user->is_active) {
             $response = [
@@ -64,17 +77,32 @@ class UserController extends Controller
         /**
          * если всё ок - создать токен
          */
-        $token = $user->createToken('user', $user->abilities ? json_decode($user->abilities) : []);
+//        $token = $user->createToken('user', $user->abilities ? json_decode($user->abilities) : []);
 
         /**
          * Отправить токен в ответ
          */
-        return [
-            'token' => $token->plainTextToken,
-            'email' => $user->email,
-            'name' => $user->name,
-            'abilities' => $token->accessToken->abilities
-        ];
+//        return [
+//            'token' => $token->plainTextToken,
+//            'email' => $user->email,
+//            'name' => $user->name,
+//            'abilities' => $token->accessToken->abilities
+//        ];
+        return true;
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
+    public function user(Request $request) {
+//        $response = [
+//            'status' => 401,
+//            'message' => 'Доступ запрещён'
+//        ];
+//        return response($response, 401);
+
+        return $request->user();
     }
 
     /**
