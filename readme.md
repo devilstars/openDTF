@@ -1,3 +1,6 @@
+Despite the fact that I really like the idea of dividing the front and backend into two projects, it would be optimal to choose a different stack for such a task.
+All working code has been moved to a [separate repository](https://github.com/devilstars/opendtf_tall), and this one has been sent to the archive.
+
 ## Pet project. Open "DTF.ru / VC.ru / TJournal.ru" like service.
 
 This is **backend only**. Frontend development is here: https://github.com/devilstars/opendtf-front 
